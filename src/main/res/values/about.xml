@@ -39,10 +39,10 @@
 			\n\nЭта программа распространяется в надежде, что она будет полезна,
 			но БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; без даже подразумеваемой гарантии
 			КОММЕРЧЕСКАЯ ЦЕННОСТЬ или ПРИГОДНОСТЬ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Посмотреть
-			Стандартную общественную лицензию GNU3 для более подробной информации.
+			Стандартную общественную лицензию GNU v3 для более подробной информации.
 			\n\nВы должны были получить копию Стандартной общественной лицензии GNU
 			вместе с этой программой. Если нет, см. https://www.gnu.org/licenses.
-			\n\nСкачать исходники вы можете здесь: https://github.com/iNPUTmice/Conversations
+			\n\nСкачать исходники вы можете здесь: https://github.com/dedmurash/Sobesednik
 			\n\n\nИспользуемые библиотеки и модули:
 			\n\nhttps://webrtc.org\nCopyright (c) 2011, The WebRTC project authors. All rights reserved. (https://webrtc.org/support/license)
 			\n\nhttps://github.com/ypresto/android-transcoder\n(Apache License, Version 2.0)

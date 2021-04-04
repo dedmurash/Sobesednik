@@ -58,20 +58,20 @@ dependencies {
     implementation 'org.bouncycastle:bcmail-jdk15on:1.64'
     //zxing stopped supporting Java 7 so we have to stick with 3.3.3
     //https://github.com/zxing/zxing/issues/1170
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.4.1'
     implementation 'de.measite.minidns:minidns-hla:0.2.4'
     implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
     implementation 'org.whispersystems:signal-protocol-java:2.6.2'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation "com.wefika:flowlayout:0.4.1"
     implementation 'net.ypresto.androidtranscoder:android-transcoder:0.3.0'
-    implementation 'org.jxmpp:jxmpp-jid:0.6.4'
+    implementation 'org.jxmpp:jxmpp-jid:1.0.1'
     implementation 'org.osmdroid:osmdroid-android:6.1.10'
     implementation 'org.hsluv:hsluv:0.2'
     implementation 'org.conscrypt:conscrypt-android:2.2.1'
     implementation 'me.drakeet.support:toastcompat:1.1.0'
     implementation "com.leinardi.android:speed-dial:2.0.1"
-    implementation 'org.webrtc:google-webrtc:1.0.+'
+    implementation 'org.webrtc:google-webrtc:1.0.32006'
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation "com.squareup.okhttp3:okhttp:4.9.1"
