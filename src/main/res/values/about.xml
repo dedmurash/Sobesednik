@@ -30,20 +30,20 @@
 
 <resources>
     <string name="pref_about_message" translatable="false">
-			Conversations • the very last word in instant messaging.
-			\n\nCopyright © 2014-2021 Daniel Gultsch
-			\n\nThis program is free software: you can redistribute it and/or modify
-			it under the terms of the GNU General Public License as published by
-			the Free Software Foundation, either version 3 of the License, or
-			(at your option) any later version.
-			\n\nThis program is distributed in the hope that it will be useful,
-			but WITHOUT ANY WARRANTY; without even the implied warranty of
-			MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-			GNU General Public License for more details.
-			\n\nYou should have received a copy of the GNU General Public License
-			along with this program. If not, see https://www.gnu.org/licenses
-			\n\nDownload the full source code at https://github.com/iNPUTmice/Conversations
-			\n\n\nLibraries
+			Собеседник • последнее слово в обмене мгновенными сообщениями.
+			\n\nАвторское право © 2014-2021 Муравьев Илья
+			\n\nЭта программа является бесплатной: вы можете распространять ее и/или изменять
+			в соответствии с условиями Стандартной общественной лицензии GNU, опубликованной
+			Free Software Foundation, 3 версии Лицензии, либо
+			(по вашему выбору) любая более поздняя версия.
+			\n\nЭта программа распространяется в надежде, что она будет полезна,
+			но БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; без даже подразумеваемой гарантии
+			КОММЕРЧЕСКАЯ ЦЕННОСТЬ или ПРИГОДНОСТЬ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ. Посмотреть
+			Стандартную общественную лицензию GNU3 для более подробной информации.
+			\n\nВы должны были получить копию Стандартной общественной лицензии GNU
+			вместе с этой программой. Если нет, см. https://www.gnu.org/licenses.
+			\n\nСкачать исходники вы можете здесь: https://github.com/iNPUTmice/Conversations
+			\n\n\nИспользуемые библиотеки и модули:
 			\n\nhttps://webrtc.org\nCopyright (c) 2011, The WebRTC project authors. All rights reserved. (https://webrtc.org/support/license)
 			\n\nhttps://github.com/ypresto/android-transcoder\n(Apache License, Version 2.0)
 			\n\nhttps://www.bouncycastle.org\n(The MIT License (MIT))
