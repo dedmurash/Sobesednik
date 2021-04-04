@@ -115,9 +115,9 @@
     <string name="offering">предложение…</string>
     <string name="waiting">ожидание…</string>
     <string name="no_pgp_key">Нет OpenPGP ключа</string>
-    <string name="contact_has_no_pgp_key">Conversations не может зашифровать сообщение, потому что ваш собеседник не анонсирует свой открытый ключ.\n\n<small>Пожалуйста, попросите вашего собеседника настроить OpenPGP.</small></string>
+    <string name="contact_has_no_pgp_key">Собеседник не может зашифровать сообщение, потому что ваш собеседник не анонсирует свой открытый ключ.\n\n<small>Пожалуйста, попросите вашего собеседника настроить OpenPGP.</small></string>
     <string name="no_pgp_keys">Нет OpenPGP ключей</string>
-    <string name="contacts_have_no_pgp_keys">Conversations не может зашифровать сообщение, потому что ваши собеседники не анонсируют свои открытые ключи.\n\n<small>Пожалуйста, попросите ваших собеседников настроить OpenPGP.</small></string>
+    <string name="contacts_have_no_pgp_keys">Собеседник не может зашифровать сообщение, потому что ваши собеседники не анонсируют свои открытые ключи.\n\n<small>Пожалуйста, попросите ваших собеседников настроить OpenPGP.</small></string>
     <string name="pref_general">Общие</string>
     <string name="pref_accept_files">Принимать файлы</string>
     <string name="pref_accept_files_summary">Автоматический приём файлов…</string>
@@ -543,9 +543,9 @@
     <string name="security_error_invalid_file_access">Ошибка безопасности: недействительный доступ к файлу</string>
     <string name="no_application_to_share_uri">Не найдено приложения для передачи URI</string>
     <string name="share_uri_with">Отправить URI…</string>
-    <string name="welcome_text_quicksy"><![CDATA[Quicksy — это ответвление XMPP-клиента Conversations с автоматическим обнаружением контактов.<br><br>После авторизации по номеру телефона Quicksy автоматически, основываясь на вашей адресной книге, предложит добавить возможные контакты.<br><br>Регистрируясь, вы соглашаетесь с нашей <a href="https://quicksy.im/#privacy">политикой конфиденциальности</a>.]]></string>
+    <string name="welcome_text_quicksy"><![CDATA[Quicksy — это ответвление XMPP-клиента Собеседник с автоматическим обнаружением контактов.<br><br>После авторизации по номеру телефона Quicksy автоматически, основываясь на вашей адресной книге, предложит добавить возможные контакты.<br><br>Регистрируясь, вы соглашаетесь с нашей <a href="https://quicksy.im/#privacy">политикой конфиденциальности</a>.]]></string>
     <string name="agree_and_continue">Согласиться и продолжить</string>
-    <string name="magic_create_text">Мы поможем Вам создать аккаунт на conversations.im¹.\nВыбрав conversations.im в качестве провайдера, вы сможете общаться с пользователями других провайдеров, сообщив им свой полный XMPP-адрес.</string>
+    <string name="magic_create_text">Мы поможем Вам создать аккаунт на simaj.ru¹.\nВыбрав simaj.ru в качестве провайдера, вы сможете общаться с пользователями, сообщив им свой полный XMPP-адрес.</string>
     <string name="your_full_jid_will_be">Ваш полный XMPP-адрес будет: %s</string>
     <string name="create_account">Создать аккаунт</string>
     <string name="use_own_provider">Использовать свой провайдер</string>
@@ -570,7 +570,7 @@
     <string name="gp_medium">Средний</string>
     <string name="gp_long">Длинный</string>
     <string name="pref_broadcast_last_activity">Оповещать других об использовании</string>
-    <string name="pref_broadcast_last_activity_summary">Позволяет вашим контактам видеть, когда вы используете Conversations</string>
+    <string name="pref_broadcast_last_activity_summary">Позволяет вашим контактам видеть, когда вы используете Собеседник</string>
     <string name="pref_privacy">Приватность</string>
     <string name="pref_theme_options">Тема</string>
     <string name="pref_theme_options_summary">Выбрать цветовую палитру</string>
@@ -701,7 +701,7 @@
     <string name="message">Сообщение</string>
     <string name="private_messages_are_disabled">Личные сообщения выключены</string>
     <string name="huawei_protected_apps">Защищенные приложения</string>
-    <string name="huawei_protected_apps_summary">Чтобы продолжать получать уведомления, даже если экран выключен, вам необходимо добавить Conversations в список защищенных приложений.</string>
+    <string name="huawei_protected_apps_summary">Чтобы продолжать получать уведомления, даже если экран выключен, вам необходимо добавить Собеседник в список защищенных приложений.</string>
     <string name="mtm_accept_cert">Принять Неизвестный Сертификат?</string>
     <string name="mtm_trust_anchor">Этот сертификат сервера не подписан ни одним из известных центров сертификации.</string>
     <string name="mtm_accept_servername">Принять несовпадающее имя сервера?</string>
@@ -850,7 +850,7 @@
     <string name="ebook">Электронная книга</string>
     <string name="video_original">Оригинал (без сжатия)</string>
     <string name="open_with">Открыть с помощью…</string>
-    <string name="set_profile_picture">Картинка профиля Conversations</string>
+    <string name="set_profile_picture">Картинка профиля Собеседник</string>
     <string name="choose_account">Выбрать аккаунт</string>
     <string name="restore_backup">Восстановить из резервной копии</string>
     <string name="restore">Восстановить</string>
@@ -899,10 +899,10 @@
     <string name="add_anway">Добавить все равно</string>
     <string name="this_looks_like_channel">Это похоже на адрес канала</string>
     <string name="share_backup_files">Поделиться резервными копиями</string>
-    <string name="conversations_backup">Резервная копия Conversations</string>
+    <string name="conversations_backup">Резервная копия Собеседник</string>
     <string name="event">Событие</string>
     <string name="open_backup">Открыть резервную копию</string>
-    <string name="not_a_backup_file">Выбранный вами файл не является файлом резервной копии Conversations</string>
+    <string name="not_a_backup_file">Выбранный вами файл не является файлом резервной копии Собеседник</string>
     <string name="account_already_setup">Эта учетная запись уже настроена</string>
     <string name="please_enter_password">Пожалуйста, введите пароль этой учетной записи</string>
     <string name="unable_to_perform_this_action">Не удалось совершить это действие</string>
@@ -981,8 +981,13 @@
     <string name="failed_deliveries">Недоставленные сообщения</string>
     <string name="more_options">Ещё</string>
     <string name="no_application_found">Не найдено приложения</string>
-    <string name="invite_to_app">Пригласить в Conversations</string>
+    <string name="invite_to_app">Пригласить в Собеседник</string>
     <string name="unable_to_parse_invite">Невозможно разобрать приглашение</string>
     <string name="server_does_not_support_easy_onboarding_invites">Сервер не поддерживает создание приглашений</string>
     <string name="no_active_accounts_support_this">Ни один активный аккаунт не поддерживает эту функцию</string>
-    </resources>
+    <string name="free_for_six_month">¹ Ваш аккаунт абсолютно бесплатный</string>
+    <string name="error_security_exception">"Приложение, которое вы использовали для публикации этого файла, не предоставило достаточно разрешений. "</string>
+    <string name="welcome_header">Присоединиться к беседе</string>
+    <string name="backup_started_message">Резервное копирование запущено. После завершения вы получите уведомление.</string>
+    <string name="unable_to_enable_video">Невозможно включить видео.</string>
+</resources>
