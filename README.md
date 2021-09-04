@@ -54,390 +54,354 @@ XEP's. Собеседник поддерживает несколько из н�
   ли разговоры в фоновом режиме. Позволяет серверу экономить полосу пропускания, задерживая неважные пакеты.
 * [XEP-0363: HTTP File Upload](http://xmpp.org/extensions/xep-0363.html) позволяет обмениваться файлами в конференциях 
   и с автономными контактами.
-
-Разговоры работают с каждым сервером XMPP там. Однако XMPP является
-расширяемый протокол. Эти расширения стандартизированы также в так называемом
-XEP. Conversations поддерживает пару из них, чтобы сделать общий пользователь
-опыт лучше. Есть шанс, что ваш текущий сервер XMPP не
-поддержать эти расширения; поэтому, чтобы получить максимальную отдачу от разговоров вы
-следует учитывать либо переход на сервер XMPP, который делает или — еще лучше —
-запустите собственный сервер XMPP для вас и ваших друзей. Эти XEP:
-
-* [XEP-0065: SOCKS5 Bytestreams](http://xmpp.org/extensions/xep-0065.html) (or mod_proxy65). Will be used to transfer
-  files if both parties are behind a firewall (NAT).
-* [XEP-0163: Personal Eventing Protocol](http://xmpp.org/extensions/xep-0163.html) for avatars and OMEMO.
-* [XEP-0191: Blocking command](http://xmpp.org/extensions/xep-0191.html) lets you blacklist spammers or block contacts
-  without removing them from your roster.
-* [XEP-0198: Stream Management](http://xmpp.org/extensions/xep-0198.html) allows XMPP to survive small network outages and
-  changes of the underlying TCP connection.
-* [XEP-0280: Message Carbons](http://xmpp.org/extensions/xep-0280.html) which automatically syncs the messages you send to
-  your desktop client and thus allows you to switch seamlessly from your mobile
-  client to your desktop client and back within one conversation.
-* [XEP-0237: Roster Versioning](http://xmpp.org/extensions/xep-0237.html) mainly to save bandwidth on poor mobile connections
-* [XEP-0313: Message Archive Management](http://xmpp.org/extensions/xep-0313.html) synchronize message history with the
-  server. Catch up with messages that were sent while Conversations was
-  offline.
-* [XEP-0352: Client State Indication](http://xmpp.org/extensions/xep-0352.html) lets the server know whether or not
-  Conversations is in the background. Allows the server to save bandwidth by
-  withholding unimportant packages.
-* [XEP-0363: HTTP File Upload](http://xmpp.org/extensions/xep-0363.html) allows you to share files in conferences
-  and with offline contacts.
-
 ## FAQ
 
-### General
+### Общие вопросы
 
-#### How do I install Conversations?
+#### Как установить приложение "Собеседник"?
 
-Разговоры полностью открытый источник и лицензированы под GPLv3. Так что если вы
-разработчик программного обеспечения вы можете проверить источники от GitHub и использовать Gradle to
+Собеседник полностью открытый источник и лицензированы под GPLv3. Так что если вы
+разработчик программного обеспечения вы можете проверить источники от GitHub и использовать Gradle, чтобы
 построить ваш файл apk.
 
-The more convenient way — which not only gives you automatic updates but also
-supports the further development of Conversations — is to buy the App in the
+Более удобный способ - который не только дает возможность автоматического обновления, но и
+поддерживает дальнейшее развитие Conversations - это купить приложение в
 Google [Play Store](https://play.google.com/store/apps/details?id=eu.siacs.conversations&referrer=utm_source%3Dgithub).
 
-Buying the App from the Play Store will also give you access to our [beta test](#beta).
+#### Как мне создать учетную запись?
+XMPP, как и электронная почта, является федеративным протоколом, что означает, что нет ни одной компании, в которой вы можете создать *официальную учетную запись XMPP*. Вместо этого существуют сотни или даже тысячи провайдеров. Воспользуйтесь поисковой системой по вашему выбору, чтобы найти другого провайдера. Или, может быть, он есть в вашем университете. Или вы можете запустить свою собственную. Или попросите друга запустить его. После того, как вы найдете такого провайдера, вы можете использовать Conversations для создания учетной записи. Просто выберите *register new account* на сервере в диалоге создания учетной записи.
 
-#### I don't have a Google Account but I would still like to make a donation
-
-I’m listing several options to support me financially on [my website](https://gultsch.de/donate.html). Among other things [Liberapay](https://liberapay.com/iNPUTmice/donate), [GitHub Sponsors](https://github.com/sponsors/inputmice) and bank transfer.
-
-#### How do I create an account?
-XMPP, like email, is a federated protocol, which means that there is not one company you can create an *official XMPP account* with. Instead there are hundreds, or even thousands, of providers out there. One of those providers is our very own [conversations.im](https://account.conversations.im). If you don’t like to use *conversations.im* use a web search engine of your choice to find another provider. Or maybe your university has one. Or you can run your own. Or ask a friend to run one. Once you've found one, you can use Conversations to create an account. Just select *register new account* on server within the create account dialog.
-
-##### Domain hosting
-Using your own domain not only gives you a more recognizable Jabber ID, it also gives you the flexibility to migrate your account between different XMPP providers. This is a good compromise between the responsibilities of having to operate your own server and the downsides of being dependent on a single provider.
-
-Learn more about [conversations.im Jabber/XMPP domain hosting](https://account.conversations.im/domain/). 
-
-##### Running your own
-If you already have a server somewhere and are willing and able to put the necessary work in you can run your own XMPP server.
-
-As of 2019 we recommend you use [ejabberd](https://ejabberd.im). The default configuration file already enables everything you need to pass the [Conversations Compliance Suite](https://compliance.conversations.im). Make sure your Linux distribution ships a fairly recent version.
-
-With a little bit of effort [Prosody](https://prosody.im) can be configured to support all necessary extensions as well. However you will have to rely on so called [Community Modules](https://modules.prosody.im/) of varying quality. Prosody can be interesting to people who like to modify their server and create / prototype own modules.
-
-Performance wise - for small deployments - both ejabberd and Prosody should be fine. 
-
-#### Where can I set up a custom hostname / port
-Conversations will automatically look up the SRV records for your domain name
-which can point to any hostname port combination. If your server doesn’t provide
-those please contact your admin and have them read
-[this](http://prosody.im/doc/dns#srv_records). If your server operator is unwilling
-to fix this you can enable advanced server settings in the expert settings of
-Conversations.
-
-#### I get 'Incompatible Server'
-
-As regular user you should be picking a different server. The server you selected
-is probably insecure and/or very old.
-
-If you are a server administrator you should make sure that your server provides
-either STARTTLS or [XEP-0368: SRV records for XMPP over TLS](https://xmpp.org/extensions/xep-0368.html).
-
-On rare occasions this error message might also be caused by a server not providing
-a login (SASL) mechanism that Conversations is able to handle. Conversations supports
-SCRAM-SHA1, PLAIN, EXTERNAL (client certs) and DIGEST-MD5.
-
-#### I get 'Bind failure'. What does that mean?
-
-Some Bind failures are transient and resolve themselves after a reconnect.
-
-When trying to connect to OpenFire the bind failure can be a permanent problem when the domain part of the Jabber ID entered in Conversations doesn’t match the domain the OpenFire server feels responsible for. For example OpenFire is configured to use the domain `a.tld` but the Jabber ID entered is `user@b.tld` where `b.tld` also points to the same host. During bind OpenFire tries to reassign the Jabber to `user@a.tld`. Conversations doesn’t like that.
-This can be fixed by creating a new account in Conversations that uses the Jabber ID `user@a.tld`. 
-
-Note: This is kind of a weird quirk in OpenFire. Most other servers would just throw a 'Server not responsible for domain' error instead of attempting to reassign the Jabber ID.
-
-Maybe you attempted to use the Jabber ID `test@b.tld` because `a.tld` doesn’t point to the correct host. In that case you might have to enable the extended connection settings in the expert settings of Conversations and set a host name.
-
-#### I get 'Stream opening error'. What does that mean?
-
-In most cases this error is caused by ejabberd advertising support for TLSv1.3 but not properly supporting it. This can happen if the OpenSSL version on the server already supports TLSv1.3 but the fast\_tls wrapper library used by ejabberd not (properly) support it. Upgrading fast\_tls and ejabberd or - theoretically - downgrading OpenSSL should fix the issue. A work around is to explicitly disable TLSv1.3 support in the ejabberd configuration. More information can be found on [this issue on the ejabberd issue tracker](https://github.com/processone/ejabberd/issues/2614).
+##### Хостинг доменов
+Использование собственного домена не только дает вам более узнаваемый Jabber ID, но и позволяет гибко переносить вашу учетную запись между различными XMPP-провайдерами. Это хороший компромисс между ответственностью за работу собственного сервера и недостатками зависимости от одного провайдера.
 
 
-#### I’m getting this annoying permanent notification
-Starting with Conversations 2.3.6 Conversations releases distributed over the Google Play Store will display a permanent notification if you are running it on Android 8 and above. This is a rule that it is essentially enforced by the Google Play Store. (You won’t have the problem  of a *forced* foreground notification if you are getting your app from F-Droid.)
+##### Запуск собственного сервера
+Если у вас уже есть где-то сервер, и вы готовы и способны проделать необходимую работу, вы можете запустить свой собственный XMPP-сервер.
 
-However you can disable the notification via settings of the operating system. (Not settings in Conversations.)
+С 2019 года мы рекомендуем вам использовать [ejabberd](https://ejabberd.im). Конфигурационный файл по умолчанию уже включает все необходимое для прохождения теста [Conversations Compliance Suite](https://compliance.conversations.im). Убедитесь, что ваш дистрибутив Linux поставляет достаточно свежую версию.
 
-**The battery consumption and the entire behavior of Conversations will remain the same (as good or as bad as it was before). Why is Google doing this to you? We have no idea.**
+Приложив немного усилий, можно настроить [Prosody](https://prosody.im) на поддержку всех необходимых расширений. Однако вам придется полагаться на так называемые [Community Modules](https://modules.prosody.im/) разного качества. Prosody может быть интересен людям, которые любят модифицировать свой сервер и создавать/прототипировать собственные модули.
 
-##### Android &lt;= 7.1 or Conversations from F-Droid (all Android versions)
-The foreground notification is still controlled over the expert settings within Conversations as it always has been. Whether or not you need to enable it depends on how aggressive the non-standard 'power saving' features are that your phone vendor has built into the operating system.
+С точки зрения производительности - для небольших развертываний - и ejabberd, и Prosody должны быть в порядке. 
+
+#### Где я могу установить пользовательское имя хоста / порт?
+Conversations автоматически ищет SRV записи для вашего доменного имени.
+которые могут указывать на любую комбинацию имени хоста и порта. Если ваш сервер не предоставляет
+эти записи, пожалуйста, свяжитесь с вашим администратором и попросите его прочитать
+[это] (http://prosody.im/doc/dns#srv_records). Если оператор вашего сервера не желает
+исправить это, вы можете включить расширенные настройки сервера в настройках эксперта в разделе
+Разговоры.
+
+#### Я получаю 'Несовместимый сервер'.
+
+Как обычный пользователь вы должны выбрать другой сервер. Выбранный вами сервер
+вероятно, небезопасен и/или очень старый.
+
+Если вы являетесь администратором сервера, вы должны убедиться, что ваш сервер обеспечивает
+STARTTLS или [XEP-0368: SRV records for XMPP over TLS](https://xmpp.org/extensions/xep-0368.html).
+
+В редких случаях это сообщение об ошибке может быть вызвано тем, что сервер не предоставляет
+механизм входа в систему (SASL), который Conversations может обрабатывать. Conversations поддерживает
+SCRAM-SHA1, PLAIN, EXTERNAL (клиентские сертификаты) и DIGEST-MD5.
+
+#### Я получаю 'Bind failure'. Что это значит?
+
+Некоторые сбои привязки носят временный характер и устраняются после повторного подключения.
+
+При попытке подключения к OpenFire ошибка привязки может быть постоянной проблемой, когда доменная часть Jabber ID, введенного в Conversations, не совпадает с доменом, за который отвечает сервер OpenFire. Например, OpenFire настроен на использование домена `a.tld`, но Jabber ID введен `user@b.tld`, где `b.tld` также указывает на тот же хост. Во время привязки OpenFire пытается переназначить Jabber на `user@a.tld`. Conversations это не нравится.
+Это можно исправить, создав новую учетную запись в Conversations, которая использует Jabber ID `user@a.tld`. 
+
+Примечание: Это довольно странная причуда OpenFire. Большинство других серверов просто выдадут ошибку 'Сервер не отвечает за домен' вместо того, чтобы попытаться переназначить Jabber ID.
+
+Возможно, вы пытались использовать Jabber ID `test@b.tld`, потому что `a.tld` не указывает на правильный хост. В этом случае вам, возможно, придется включить расширенные настройки соединения в экспертных настройках Conversations и задать имя хоста.
+
+#### Я получаю сообщение "Ошибка открытия потока". Что это значит?
+
+В большинстве случаев эта ошибка вызвана тем, что ejabberd рекламирует поддержку TLSv1.3, но не поддерживает ее должным образом. Это может произойти, если версия OpenSSL на сервере уже поддерживает TLSv1.3, но библиотека-обертка fast\_tls, используемая ejabberd, не поддерживает его (должным образом). Обновление fast\_tls и ejabberd или - теоретически - понижение версии OpenSSL должно устранить проблему. Обходным решением является явное отключение поддержки TLSv1.3 в конфигурации ejabberd. Более подробную информацию можно найти на [эта проблема на трекере проблем ejabberd](https://github.com/processone/ejabberd/issues/2614).
+
+
+#### Я получаю это раздражающее постоянное уведомление.
+Начиная с Conversations 2.3.6 выпуски Conversations, распространяемые через Google Play Store, будут отображать постоянное уведомление, если вы используете его на Android 8 и выше. Это правило, которое, по сути, навязывается Google Play Store. (У вас не будет проблемы *принудительного* уведомления на переднем плане, если вы получаете приложение из F-Droid).
+
+Однако вы можете отключить уведомление через настройки операционной системы. (Не настройки в разделе "Разговоры").
+
+** Расход батареи и все поведение Conversations останется прежним (таким же хорошим или плохим, как и раньше). Почему Google так поступает с вами? Мы понятия не имеем.**
+
+##### Android &lt;= 7.1 или Conversations от F-Droid (все версии Android).
+Уведомление на переднем плане по-прежнему контролируется через экспертные настройки в Conversations, как это было всегда. Нужно ли его включать, зависит от того, насколько агрессивны нестандартные функции "энергосбережения", встроенные в операционную систему вашего телефона.
 
 ##### Android 8.x
-Long press the permanent notification and disable that particular type of notification by moving the slider to the left. This will make the notification disappear but create another notification (this time created by the operating system itself.) that will complain about Conversations (and other apps) using battery. Starting with Android 8.1 you can disable that notification again with the same method described above.
+Длительно нажмите на постоянное уведомление и отключите этот тип уведомления, передвинув ползунок влево. В результате уведомление исчезнет, но появится другое уведомление (на этот раз созданное самой операционной системой), которое будет жаловаться на то, что "Разговоры" (и другие приложения) расходуют заряд батареи. Начиная с Android 8.1 вы можете снова отключить это уведомление тем же способом, который описан выше.
 
 ##### Android 9.0+
-Long press the permanent notification and press the info `(i)` button to get into the App info screen. In that screen touch the 'Notification' entry. In the next screen remove the checkbox for the 'Foreground service' entry. 
+Длительно нажмите на постоянное уведомление и нажмите кнопку info `(i)`, чтобы попасть на экран App info. На этом экране выберите пункт "Уведомления". На следующем экране снимите флажок с пункта "Служба переднего плана". 
 
-#### How do XEP-0357: Push Notifications work?
-You need to be running the Play Store version of Conversations and your server needs to support push notifications.¹ Because *Google’s Firebase Cloud Messaging (FCM)* are tied with an API key to a specific app your server can not initiate the push message directly. Instead your server will send the push notification to the [Conversations App server](https://github.com/iNPUTmice/p2) (operated by us) which then acts as a proxy and initiates the push message for you. The push message sent from our App server through FCM doesn’t contain any personal information. It is just an empty message which will wake up your device and tell Conversations to reconnect to your server. The information sent from your server to our App server depends on the configuration of your server but can be limited to your account name. (In any case the Conversations App server won't redirect any information through FCM even if your server sends this information.)
+#### Как работают XEP-0357: Push-уведомления?
+Вы должны использовать версию Conversations для Play Store, а ваш сервер должен поддерживать push-уведомления.¹ Поскольку *Google's Firebase Cloud Messaging (FCM)* привязаны API-ключом к определенному приложению, ваш сервер не может инициировать push-сообщение напрямую. Вместо этого ваш сервер отправит push-уведомление на [Conversations App server](https://github.com/iNPUTmice/p2) (управляемый нами), который будет действовать как прокси-сервер и инициирует push-сообщение для вас. Сообщение push, отправленное с нашего сервера App через FCM, не содержит никакой личной информации. Это просто пустое сообщение, которое разбудит ваше устройство и попросит Conversations переподключиться к вашему серверу. Информация, отправляемая с вашего сервера на наш сервер приложений, зависит от конфигурации вашего сервера, но может быть ограничена именем вашей учетной записи. (В любом случае сервер приложений Conversations не будет перенаправлять какую-либо информацию через FCM, даже если ваш сервер отправит эту информацию).
 
-In summary Google will never get hold of any personal information besides that *something* happened. (Which doesn’t even have to be a message but can be some automated event as well.) We - as the operator of the App server - will just get hold of your account name (without being able to tie this to your specific device).
+В итоге Google никогда не получит никакой личной информации, кроме того, что *что-то* произошло. (Это даже не обязательно должно быть сообщение, это может быть и какое-то автоматизированное событие). Мы, как оператор сервера приложений, получим только имя вашего аккаунта (без возможности привязать его к вашему конкретному устройству).
 
-If you don’t want this simply pick a server which does not offer Push Notifications or build Conversations yourself without support for push notifications. (This is available via a gradle build flavor.) Non-play store source of Conversations like the Amazon App store will also offer a version without push notifications. Conversations will just work as before and maintain its own TCP connection in the background.
+Если вы не хотите этого, просто выберите сервер, который не предлагает Push-уведомлений, или создайте Conversations самостоятельно без поддержки push-уведомлений. (Это доступно через gradle build flavor.) Источники Conversations, не являющиеся игровыми магазинами, такие как Amazon App store, также предлагают версию без push-уведомлений. Conversations будет работать как и раньше и поддерживать свое собственное TCP-соединение в фоновом режиме.
 
-You can find a detailed description of how your server, the app server and FCM are interacting with each other in the [README](https://github.com/iNPUTmice/p2/blob/master/README.md) of the Conversations App Server.
+Подробное описание того, как ваш сервер, сервер приложений и FCM взаимодействуют друг с другом, вы можете найти в [README](https://github.com/iNPUTmice/p2/blob/master/README.md) сервера приложений Conversations.
 
- ¹ If you use the Play Store version you do **not** need to run your own app server. Your server only needs to support the server side of [XEP-0357: Push Notifications](http://xmpp.org/extensions/xep-0357.html) and [XEP-0198: Stream Management](https://xmpp.org/extensions/xep-0198.html). The prosody server modules are called *mod_cloud_notify* and *mod_smacks*. The ejabberd server modules are called *mod_push* and *mod_stream_mgmt*.
+ ¹ Если вы используете версию для Play Store, вам **не** нужно запускать собственный сервер приложений. Ваш сервер должен поддерживать только серверную часть [XEP-0357: Push Notifications](http://xmpp.org/extensions/xep-0357.html) и [XEP-0198: Stream Management](https://xmpp.org/extensions/xep-0198.html). Серверные модули prosody называются *mod_cloud_notify* и *mod_smacks*. Серверные модули ejabberd называются *mod_push* и *mod_stream_mgmt*.
 
 
-#### But why do I need a permanent notification if I use Google Push?
-FCM (Google Push) allows an app to wake up from *Doze* which is (as the name suggests) a hibernation feature of the Android operating system that cuts the network connection and also reduces the number of times the app is allowed to wake up (to ping the server for example). The app can ask to be excluded from doze. Non push variants of the app (from F-Droid or if the server doesn’t support it) will do this on first start up. So if you get exemption from *Doze*, or if you get regular push events sent to you, Doze should not pose a threat to Conversatons working properly. But even with *Doze* the app is still open in the background (kept in memory); it is just limited in the actions it can do. Conversations needs to stay in memory to hold certain session state (online status of contacts, join status of group chats, …). However with Android 8 Google changed all of this again and now an App that wants to stay in memory needs to have a foreground service which is visible to the user via the annoying notification. But why does Conversations need to hold that state? XMPP is a statefull protocol that has a lot of per-session information; packets need to be counted, presence information needs to be held, some features like Message Carbons get activated once per session, MAM catch-up happens once, service discovery happens only once; the list goes on. When Conversations was created in early 2014 none of this was a problem because apps were just allowed to stay in memory. Basically every XMPP client out there holds that information in memory because it would be a lot more complicated trying to persist it to disk. An entire rewrite of Conversations in the year 2019 would attempt to do that and would probably succeed however it would require exactly that; a complete rewrite which is not feasible right now. That’s by the way also the reason why it is difficult to write an XMPP client on iOS. Or more broadly put this is also the reason why other protocols are designed as or migrated to stateless protocols (often based on HTTP); take for example the migration of IMAP to [JMAP](https://jmap.io/).
+#### Но зачем мне нужно постоянное уведомление, если я использую Google Push?
+FCM (Google Push) позволяет приложению пробуждаться из *Doze*, что (как следует из названия) является функцией спящего режима операционной системы Android, которая отключает сетевое соединение, а также уменьшает количество раз, когда приложению разрешено пробуждаться (например, для пинга сервера). Приложение может попросить исключить его из режима doze. Не push-варианты приложения (из F-Droid или если сервер не поддерживает его) будут делать это при первом запуске. Таким образом, если вы получаете исключение из *Doze*, или если вам регулярно отправляются push-события, Doze не должен представлять угрозу для нормальной работы Conversatons. Но даже при использовании *Doze* приложение все еще открыто в фоновом режиме (находится в памяти); оно просто ограничено в действиях, которые может выполнять. Conversations необходимо оставаться в памяти для хранения определенного состояния сессии (статус контактов в сети, статус присоединения к групповым чатам, ...). Однако в Android 8 Google снова изменил все это, и теперь приложение, которое хочет оставаться в памяти, должно иметь службу переднего плана, которая видна пользователю через надоедливое уведомление. Но зачем Conversations нужно хранить это состояние? XMPP - это протокол с состоянием, который имеет много информации на каждую сессию; пакеты должны быть подсчитаны, информация о присутствии должна храниться, некоторые функции, такие как Message Carbons, активируются один раз за сессию, MAM catch-up происходит один раз, обнаружение сервиса происходит только один раз; список можно продолжить. Когда Conversations был создан в начале 2014 года, ничто из этого не было проблемой, потому что приложениям просто разрешалось оставаться в памяти. Практически каждый XMPP-клиент хранит эту информацию в памяти, потому что сохранить ее на диске было бы гораздо сложнее. Полная переработка Conversations в 2019 году попытается сделать это и, вероятно, преуспеет, однако это потребует именно этого - полной переделки, которая сейчас неосуществима. Это, кстати, также является причиной того, почему трудно написать XMPP-клиент на iOS. Или, говоря более широко, это также причина, по которой другие протоколы разрабатываются как протоколы без статического состояния (часто основанные на HTTP) или переходят на них; возьмем, к примеру, переход IMAP на [JMAP](https://jmap.io/).
 
-#### Conversations doesn’t work for me. Where can I get help?
+#### Conversations не работает у меня. Где я могу получить помощь?
 
-You can join our conference room on [`conversations@conference.siacs.eu`](https://conversations.im/j/conversations@conference.siacs.eu).
-A lot of people in there are able to answer basic questions about the usage of
-Conversations or can provide you with tips on running your own XMPP server. If
-you found a bug or your app crashes please read the Developer / Report Bugs
-section of this document.
+Вы можете присоединиться к нашей конференц-залу на [`conversations@conference.siacs.eu`](https://conversations.im/j/conversations@conference.siacs.eu).
+Многие люди там могут ответить на основные вопросы об использовании
+Conversations или могут дать вам советы по запуску вашего собственного XMPP-сервера. Если
+вы нашли ошибку или ваше приложение падает, пожалуйста, прочитайте раздел Разработчики / Сообщить об ошибке
+раздел этого документа.
 
-#### I need professional support with Conversations or setting up my server
+#### Мне нужна профессиональная поддержка в работе с Conversations или настройке моего сервера.
 
-I'm available for hire. Contact information can be found on [my website](https://gultsch.de).
+Я доступен для найма. Контактную информацию можно найти на [моем сайте](https://gultsch.de).
 
-#### How does the address book integration work?
+#### Как работает интеграция адресной книги?
 
-The address book integration was designed to protect your privacy. Conversations
-neither uploads contacts from your address book to your server nor fills your
-address book with unnecessary contacts from your online roster. If you manually
-add a Jabber ID to your phones address book Conversations will use the name and
-the profile picture of this contact. To make the process of adding Jabber IDs to
-your address book easier you can click on the profile picture in the contact
-details within Conversations. This will start an "add to address book" intent
-with the JID as the payload. This doesn't require Conversations to have write
-permissions on your address book but also doesn't require you to copy/paste a
-JID from one app to another.
+Интеграция адресной книги была разработана для защиты вашей конфиденциальности. Разговоры
+не загружает контакты из вашей адресной книги на ваш сервер и не заполняет вашу
+ни заполняет адресную книгу ненужными контактами из вашего онлайн-реестра. Если вы вручную
+добавить Jabber ID в адресную книгу вашего телефона, Conversations будет использовать имя и
+изображение профиля этого контакта. Чтобы облегчить процесс добавления Jabber ID в адресную книгу
+в адресную книгу, вы можете нажать на изображение профиля в контакте.
+в сведениях о контакте в разделе "Разговоры". Это запустит намерение "добавить в адресную книгу".
+с JID в качестве полезной нагрузки. Это не требует от Conversations наличия прав на запись
+разрешения на запись в адресную книгу, а также не требует копирования/вставки JID из одного приложения в другое.
+JID из одного приложения в другое.
 
-#### I get 'delivery failed' on my messages
+#### Я получаю сообщение 'delivery failed' на свои сообщения.
 
-If you get delivery failed on images it's probably because the recipient lost
-network connectivity during reception. In that case you can try it again at a
-later time.
+Если вы получаете сообщения с ошибкой доставки на изображениях, это, вероятно, связано с тем, что получатель потерял
+соединение с сетью во время приема. В этом случае вы можете повторить попытку через
+позже.
 
-For text messages the answer to your question is a little bit more complex.
-When you see 'delivery failed' on text messages, it is always something that is
-being reported by the server. The most common reason for this is that the
-recipient failed to resume a connection. When a client loses connectivity for a
-short time the client usually has a five minute window to pick up that
-connection again. When the client fails to do so because the network
-connectivity is out for longer than that all messages sent to that client will
-be returned to the sender resulting in a delivery failed.
+Для текстовых сообщений ответ на ваш вопрос немного сложнее.
+Когда вы видите надпись "доставка не удалась" на текстовых сообщениях, это всегда что-то, что
+сообщается сервером. Наиболее распространенной причиной этого является то, что
+получатель не смог возобновить соединение. Когда клиент теряет соединение на
+короткое время, клиент обычно имеет пятиминутное окно, чтобы восстановить соединение.
+соединение снова. Когда клиент не может этого сделать, потому что сеть
+соединение отсутствует дольше этого времени, все сообщения, отправленные этому клиенту, будут
+будут возвращены отправителю, что приведет к ошибке доставки.
 
-Instead of returning a message to the sender both ejabberd and prosody have the
-ability to store messages in offline storage when the disconnecting client is
-the only client. In prosody this is available via an extra module called
-```mod_smacks_offline```. In ejabberd this is available via some configuration
-settings.
+Вместо того чтобы возвращать сообщение отправителю, и ejabberd, и prosody имеют возможность
+возможность хранить сообщения в автономном хранилище, когда отключившийся клиент является
+единственным клиентом. В prosody это доступно с помощью дополнительного модуля под названием
+``mod_smacks_offline``. В ejabberd это доступно через некоторые конфигурационные
+настройки.
 
-Other less common reasons are that the message you sent didn't meet some
-criteria enforced by the server (too large, too many). Another reason could be
-that the recipient is offline and the server doesn't provide offline storage.
+Другие, менее распространенные причины: сообщение, которое вы отправили, не соответствует каким-то
+критериям, установленным сервером (слишком большое, слишком много). Другой причиной может быть
+что получатель находится в автономном режиме, а сервер не обеспечивает автономное хранение.
 
-Usually you are able to distinguish between these two groups in the fact that
-the first one happens always after some time and the second one happens almost
-instantly.
+Обычно вы можете отличить эти две группы по тому, что
+первая происходит всегда через некоторое время, а вторая - почти
+мгновенно.
 
-#### Where can I see the status of my contacts? How can I set a status or priority?
+#### Где я могу посмотреть статус моих контактов? Как я могу установить статус или приоритет?
 
-Statuses are a horrible metric. Setting them manually to a proper value rarely
-works because users are either lazy or just forget about them. Setting them
-automatically does not provide quality results either. Keyboard or mouse
-activity as indicator for example fails when the user is just looking at
-something (reading an article, watching a movie). Furthermore automatic setting
-of status always implies an impact on your privacy (are you sure you want
-everybody in your contact list to know that you have been using your computer at
-4am‽).
+Статусы - это ужасная метрика. Установка их вручную на нужное значение редко
+потому что пользователи либо ленивы, либо просто забывают о них. Установка их
+автоматически также не дает качественных результатов. Клавиатура или мышь
+как индикатор, например, не работает, когда пользователь просто смотрит на
+что-то (читает статью, смотрит фильм). Кроме того, автоматическая установка
+статуса всегда подразумевает влияние на вашу конфиденциальность (вы уверены, что хотите, чтобы
+чтобы все в вашем списке контактов знали, что вы пользовались компьютером в
+4 утра").
 
-In the past status has been used to judge the likelihood of whether or not your
-messages are being read. This is no longer necessary. With Chat Markers
-(XEP-0333, supported by Conversations since 0.4) we have the ability to **know**
-whether or not your messages are being read.  Similar things can be said for
-priorities. In the past priorities have been used (by servers, not by clients!)
-to route your messages to one specific client. With carbon messages (XEP-0280,
-supported by Conversations since 0.1) this is no longer necessary. Using
-priorities to route OTR messages isn't practical either because they are not
-changeable on the fly. Metrics like last active client (the client which sent
-the last message) are much better.
+В прошлом статус использовался для оценки вероятности того, что ваши
+сообщения будут прочитаны. Теперь в этом нет необходимости. С помощью маркеров чата
+(XEP-0333, поддерживается в Conversations с версии 0.4) у нас есть возможность **знать**
+читают ли ваши сообщения или нет.  То же самое можно сказать и о
+приоритеты. В прошлом приоритеты использовались (серверами, а не клиентами!)
+для направления ваших сообщений одному определенному клиенту. С углеродными сообщениями (XEP-0280,
+поддерживается Conversations с версии 0.1) в этом больше нет необходимости. Использование
+приоритетов для маршрутизации OTR-сообщений также нецелесообразно, поскольку их нельзя
+могут быть изменены на лету. Такие метрики, как последний активный клиент (клиент, который отправил
+последнее сообщение) гораздо лучше.
 
-Unfortunately these modern replacements for legacy XMPP features are not widely
-adopted. However Conversations should be an instant messenger for the future and
-instead of making Conversations compatible with the past we should work on
-implementing new, improved technologies and getting them into other XMPP clients
-as well.
+К сожалению, эти современные замены унаследованных функций XMPP не получили широкого распространения.
+приняты. Однако Conversations должен быть мессенджером для будущего и
+Вместо того, чтобы делать Conversations совместимым с прошлым, мы должны работать над тем, чтобы
+внедрением новых, улучшенных технологий и внедрением их в другие клиенты XMPP
+также.
 
-Making these status and priority optional isn't a solution either because
-Conversations is trying to get rid of old behaviours and set an example for
-other clients.
+Сделать эти статус и приоритет необязательными - тоже не решение, потому что
+Conversations пытается избавиться от старых моделей поведения и показать пример для
+другим клиентам.
 
-#### Translations
-Translations are managed on [Transifex](https://www.transifex.com/projects/p/conversations/).
-If you want to become a translator  Please register on transifex, apply to join
-the translation team and then step by our group chat on
+#### Переводы
+Переводы осуществляются на [Transifex](https://www.transifex.com/projects/p/conversations/).
+Если вы хотите стать переводчиком, пожалуйста, зарегистрируйтесь на transifex, подайте заявку на вступление в
+команду переводчиков, а затем зайдите в наш групповой чат на
 [conversations@conference.siacs.eu](https://conversations.im/j/conversations@conference.siacs.eu)
-and introduce yourself to `iNPUTmice` so he can approve your join request.
+и представьтесь `iNPUTmice`, чтобы он мог одобрить вашу заявку на вступление.
 
-#### How do I backup / move Conversations to a new device?
-On the one hand Conversations supports Message Archive Management to keep a server side history of your messages so when migrating to a new device that device can display your entire history. However that does not work if you enable OMEMO due to its forward secrecy. (Read [The State of Mobile XMPP in 2016](https://gultsch.de/xmpp_2016.html) especially the section on encryption.)
+#### Как сделать резервную копию / перенести Conversations на новое устройство?
+С одной стороны, Conversations поддерживает управление архивом сообщений для хранения истории ваших сообщений на стороне сервера, поэтому при переносе на новое устройство оно может отображать всю историю ваших сообщений. Однако это не работает, если вы включите OMEMO из-за его прямой секретности. (Прочитайте [The State of Mobile XMPP in 2016](https://gultsch.de/xmpp_2016.html), особенно раздел о шифровании).
 
-As of version 2.4.0 an integrated Backup & Restore function will help with this, go to Settings and you’ll find a setting called Create backup. A notification will pop-up during the creation process that will announce you when it's ready. After the files, one for each account, are created, you can move the **Conversations** folder *(if you want your old media files too)* or only the **Conversations/Backup** folder *(for OMEMO keys and history only)* to your new device (or to a storage place) where a freshly installed Conversations can restore each account. Don't forget to enable the accounts after a successfull restore.
+Начиная с версии 2.4.0 в этом поможет встроенная функция резервного копирования и восстановления, перейдите в Настройки и найдите настройку "Создать резервную копию". В процессе создания появится уведомление, которое сообщит вам, когда все будет готово. После создания файлов, по одному для каждой учетной записи, вы можете переместить папку **Conversations** *(если вам нужны и старые медиафайлы)* или только папку **Conversations/Backup** *(только для ключей OMEMO и истории)* на новое устройство (или в место хранения), где свежеустановленный Conversations сможет восстановить каждую учетную запись. Не забудьте включить учетные записи после успешного восстановления.
 
-This backup method will include your OMEMO keys. Due to forward secrecy you will not be able to recover messages sent and received between creating the backup and restoring it. If you have a server side archive (MAM) those messages will be retrieved but displayed as *unable to decrypt*. For technical reasons you might also lose the first message you either sent or receive after the restore; for each conversation you have. This message will then also show up as *unable to decrypt*, but this will automatically recover itself as long as both participants are on Conversations 2.3.11+. Note that this doesn’t happen if you just transfer to a new phone and no messages have been exchanged between backup and restore.
+Этот метод резервного копирования будет включать ваши ключи OMEMO. В силу принципа прямой секретности вы не сможете восстановить сообщения, отправленные и полученные между созданием резервной копии и ее восстановлением. Если у вас есть архив на стороне сервера (MAM), эти сообщения будут восстановлены, но отображены как *невозможно расшифровать*. По техническим причинам вы также можете потерять первое сообщение, которое вы отправили или получили после восстановления; для каждого разговора. Это сообщение также будет отображаться как *невозможно расшифровать*, но оно автоматически восстановится, если оба участника находятся на Conversations 2.3.11+. Обратите внимание, что этого не произойдет, если вы только что перешли на новый телефон, и между резервным копированием и восстановлением не было обмена сообщениями.
 
-In the vast, vast majority of cases you won’t have to manually delete OMEMO keys or do anything like that. Conversations only introduced the official backup feature in 2.4.0 after making sure the *OMEMO self healing* mechanism introduced in 2.3.11 works fine.
+В подавляющем, подавляющем большинстве случаев вам не придется вручную удалять ключи OMEMO или делать что-либо подобное. Conversations представила официальную функцию резервного копирования только в версии 2.4.0 после того, как убедилась, что механизм *самовосстановления OMEMO*, представленный в версии 2.3.11, работает нормально.
 
-**WARNING**: Be sure to know your accounts passwords or find ways to reset them **before** doing the backup as the files are encrypted using those passwords and the Restore process will ask for them.  
-**WARNING**: Do not use the restore backup feature in an attempt to clone (run simultaneously) an installation. Restoring a backup is only meant for migrations or in case you’ve lost the original device.
+**ПРЕДУПРЕЖДЕНИЕ**: Убедитесь, что вы знаете пароли своих учетных записей или нашли способ сбросить их **до** создания резервной копии, поскольку файлы шифруются с помощью этих паролей, и процесс восстановления будет запрашивать их.  
+**ПРЕДУПРЕЖДЕНИЕ**: Не используйте функцию восстановления резервной копии для клонирования (одновременного запуска) установки. Восстановление резервной копии предназначено только для миграции или в случае потери оригинального устройства.
 
-#### Conversations is missing a certain feature
+#### Conversations не хватает определенной функции.
 
-I'm open for new feature suggestions. You can use the [issue tracker][issues] on
-GitHub.  Please take some time to browse through the issues to see if someone
-else already suggested it. Be assured that I read each and every ticket. If I
-like it I will leave it open until it's implemented. If I don't like it I will
-close it (usually with a short comment). If I don't comment on an feature
-request that's probably a good sign because this means I agree with you.
-Commenting with +1 on either open or closed issues won't change my mind, nor
-will it accelerate the development.
+Я открыт для предложений по новым функциям. Вы можете воспользоваться трекером [issue tracker][issues] на
+GitHub.  Пожалуйста, потратьте немного времени на просмотр проблем, чтобы увидеть, не предлагал ли кто-то
+уже предлагал это. Будьте уверены, что я читаю каждый билет. Если мне
+понравится, я оставлю его открытым, пока он не будет реализован. Если мне это не нравится, я
+закрою его (обычно с коротким комментарием). Если я не комментирую
+это, вероятно, хороший знак, потому что это означает, что я согласен с вами.
+Комментарии с +1 к открытым или закрытым вопросам не изменят моего мнения и не ускорят разработку.
+не ускорит разработку.
 
-#### You closed my feature request but I want it really really badly
+#### Вы закрыли мой запрос на функцию, но я очень сильно этого хочу.
 
-Just write it yourself and send me a pull request. If I like it I will happily
-merge it if I don't at least you and like minded people get to enjoy it.
+Просто напишите его сами и отправьте мне запрос на исправление. Если он мне понравится, я с радостью
+если нет, по крайней мере, вы и другие единомышленники смогут им воспользоваться.
 
-#### I need a feature and I need it now!
+#### Мне нужна функция, и мне нужна она сейчас!
 
-I am available for hire. Find contact information on [my website](https://gultsch.de).
+Я доступен для найма. Контактная информация на [моем сайте](https://gultsch.de).
 
-### Security
+### Безопасность
 
-#### Why are there two end-to-end encryption methods and which one should I choose?
+#### Почему существует два метода сквозного шифрования и какой из них выбрать?
 
-* OMEMO works even when a contact is offline, and works with multiple devices. It also allows asynchronous file-transfer when the server has [HTTP File Upload](http://xmpp.org/extensions/xep-0363.html). However, OMEMO not widely support and is currently implemented only [by a handful of clients](https://omemo.top).
-* OpenPGP (XEP-0027) is a very old encryption method that has some advantages over OMEMO but should only be used by people who know what they are doing.
+* OMEMO работает даже тогда, когда контакт находится в автономном режиме, и работает с несколькими устройствами. Он также позволяет асинхронную передачу файлов, если на сервере есть [HTTP File Upload](http://xmpp.org/extensions/xep-0363.html). Однако OMEMO не имеет широкой поддержки и в настоящее время реализован только [горсткой клиентов](https://omemo.top).
+* OpenPGP (XEP-0027) - это очень старый метод шифрования, который имеет некоторые преимущества перед OMEMO, но должен использоваться только людьми, которые знают, что они делают.
 
-#### How do I use OpenPGP
+#### Как использовать OpenPGP
 
-Before you continue reading you should note that the OpenPGP support in
-Conversations is experimental. This is not because it will make the app unstable
-but because the fundamental concepts of PGP aren't ready for widespread use.
-The way PGP works is that you trust Key IDs instead of JID's or email addresses.
-So in theory your contact list should consist of Public-Key-IDs instead of
-JID's. But of course no email or XMPP client out there implements these
-concepts. Plus PGP in the context of instant messaging has a couple of
-downsides: It is vulnerable to replay attacks and it is rather verbose.
+Прежде чем продолжить чтение, вы должны отметить, что поддержка OpenPGP в
+Conversations является экспериментальной. Это не потому, что это сделает приложение нестабильным.
+а потому, что фундаментальные концепции PGP еще не готовы к широкому использованию.
+Принцип работы PGP заключается в том, что вы доверяете идентификаторам ключей, а не JID или адресам электронной почты.
+Поэтому теоретически ваш список контактов должен состоять из идентификаторов открытых ключей, а не из JID.
+JID. Но, конечно, ни один почтовый или XMPP-клиент не реализует эти концепции.
+концепции. Кроме того, PGP в контексте обмена мгновенными сообщениями имеет несколько
+недостатков: Он уязвим для атак повторного воспроизведения и довольно многословен.
 
-To use OpenPGP you have to install the open source app
-[OpenKeychain](http://www.openkeychain.org) and then long press on the account in
-manage accounts and choose renew PGP announcement from the contextual menu.
+Чтобы использовать OpenPGP, необходимо установить приложение с открытым исходным кодом
+[OpenKeychain](http://www.openkeychain.org), а затем долго нажимать на учетную запись в разделе
+manage accounts и в контекстном меню выбрать renew PGP announcement.
 
-#### OMEMO is grayed out. What do I do?
-OMEMO is only available in 1:1 chats and private (members-only, non-anonymous) group chats. Encrypting public group chats makes little to no sense since anyone (including a hypothetical attacker) can join and a user couldn’t possibily verify all participants anyway. Furthermore for a lot of public group chat it is desirable to give new comers access to the full history.
+#### OMEMO выделен серым цветом. Что делать?
+OMEMO доступен только в чатах 1:1 и частных (только для участников, не анонимных) групповых чатах. Шифрование публичных групповых чатов практически не имеет смысла, поскольку любой (включая гипотетического злоумышленника) может присоединиться к ним, а пользователь в любом случае не сможет проверить всех участников. Более того, для многих публичных групповых чатов желательно предоставить новым участникам доступ к полной истории.
 
-#### OMEMO doesn’t work. I get a 'Something went wrong' message in the 'Trust OMEMO Fingerprints' screen.
-OMEMO has two requirements: Your server and the server of your contact need to support PEP. Both of you can verify that individually by opening your account details and selecting ```Server info``` from the menu. The appearing table should list PEP as available. The second requirement is that the initial sender needs to have access to the published key material. This can either be achieved by having mutual presence subscription (you can verify that by opening the contact details and see if both check boxes *Send presence updates* and *Receive presence updates* are checked) or by using a server that makes the public key material accessible to anyone. In the [Compliance Tester](https://compliance.conversations.im) this is indicated by the 'OMEMO' feature. Since it is very common that the first messages are exchanged *before* adding each other to the contact list it is desirable to use servers that have 'OMEMO support'.
+#### OMEMO не работает. Я получаю сообщение "Что-то пошло не так" на экране "Trust OMEMO Fingerprints".
+У OMEMO есть два требования: Ваш сервер и сервер вашего контакта должны поддерживать PEP. Вы оба можете проверить это индивидуально, открыв данные вашей учетной записи и выбрав в меню ``Server info``. В появившейся таблице должно быть указано, что PEP доступен. Второе требование заключается в том, что первоначальный отправитель должен иметь доступ к опубликованному ключевому материалу. Этого можно достичь либо путем взаимной подписки на присутствие (вы можете проверить это, открыв контактные данные и посмотрев, установлены ли оба флажка *Отправлять обновления присутствия* и *Получать обновления присутствия*), либо с помощью сервера, который делает материал открытого ключа доступным для всех. В [Compliance Tester](https://compliance.conversations.im) на это указывает функция 'OMEMO'. Поскольку очень часто первые сообщения обмениваются *до* добавления друг друга в список контактов, желательно использовать серверы с поддержкой 'OMEMO'.
 
-#### How does the encryption for group chats work?
+#### Как работает шифрование групповых чатов?
 
 ##### OMEMO
 
-OMEMO encryption works only in private (members only) conferences that are non-anonymous. Non-anonymous (being able to discover the real JID of other participants) is a technical requirement to discover the key material. Members only is a sort of arbitrary requirement imposed by Conversations. (see 'OMEMO is grayed out')
+Шифрование OMEMO работает только в закрытых (только для участников) неанонимных конференциях. Неанонимность (возможность узнать реальный JID других участников) - это техническое требование для открытия ключевого материала. Только для участников - это своего рода произвольное требование, навязанное Conversations. (см. "OMEMO выделено серым цветом").
 
-The server of all participants need to pass the OMEMO [Compliance Test](https://conversations.im/compliance/).
-In other words they either need to run ejabberd 18.01+ or Prosody 0.11+.
+Серверы всех участников должны пройти OMEMO [Compliance Test](https://conversations.im/compliance/).
+Другими словами, они должны работать либо под управлением ejabberd 18.01+, либо Prosody 0.11+.
 
-(Alternatively it would also work if all participants had each other in their contact list; But that rarely is the case in larger group chats.)
+(В качестве альтернативы это также будет работать, если все участники имеют друг друга в списке контактов; но это редко случается в больших групповых чатах).
 
-The owner of a conference can make a public conference private by going into the conference
-details and hit the settings button (the one with the gears) and select both *private* and
-*members only*.
+Владелец конференции может сделать публичную конференцию приватной, зайдя в раздел
+подробности и нажать кнопку настроек (та, что с шестеренками) и выбрать *частная* и
+*только для участников*.
 
 ##### OpenPGP
 
-Every participant has to announce their OpenPGP key (see answer above).
-If you would like to send encrypted messages to a conference you have to make
-sure that you have every participant's public key in your OpenKeychain.
-Right now there is no check in Conversations to ensure that.
-You have to take care of that yourself. Go to the conference details and
-touch every key id (The hexadecimal number below a contact). This will send you
-to OpenKeychain which will assist you on adding the key.  This works best in
-very small conferences with contacts you are already using OpenPGP with. This
-feature is regarded experimental. Conversations is the only client that uses
-XEP-0027 with conferences. (The XEP neither specifically allows nor disallows
-this.)
+Каждый участник должен объявить свой ключ OpenPGP (см. ответ выше).
+Если вы хотите отправлять зашифрованные сообщения в конференции, вы должны убедиться, что
+убедиться, что у вас есть открытый ключ каждого участника в вашем OpenKeychain.
+Сейчас в Conversations нет проверки, чтобы убедиться в этом.
+Вы должны позаботиться об этом сами. Перейдите к деталям конференции и
+коснитесь идентификатора каждого ключа (шестнадцатеричное число под контактом). Это отправит вас
+в OpenKeychain, который поможет вам добавить ключ.  Это лучше всего работает в
+очень маленьких конференциях с контактами, с которыми вы уже используете OpenPGP. Этот
+функция считается экспериментальной. Conversations - единственный клиент, который использует
+XEP-0027 в конференциях. (XEP специально не разрешает и не запрещает
+это.)
 
-#### What is Blind Trust Before Verification / why are messages marked with a red lock?
+#### Что такое слепое доверие до верификации / почему сообщения помечаются красным замком?
 
-Read more about the concept on https://gultsch.de/trust.html
+Подробнее об этой концепции читайте на https://gultsch.de/trust.html.
 
-#### What happened to OTR support?
-OTR was removed because it was highly unreliable. It didn’t work with multiple devices and was never really specified to work with XMPP. The codebase was a mess (There was an HTML parser in there for crying out loud to deal with the garbage some OTR clients would send.) Verification was implemented in a non-blocking way. It would tell you if the current session was using an unknown fingerprint but it didn’t actively stopped you from sending messages until you have confirmed the new fingerprint. (Like Conversations would do now with BTBV after verification or when BTBV is turned off.) Considering the previous points there was little to no desire from my point to fix this potential security issue or clean up the code base. Another reason for the removal was that people would use it *accidentally* even to communicate between two Conversations clients because they read somewhere that OTR is good.
+#### Что случилось с поддержкой OTR?
+OTR был удален, потому что он был очень ненадежным. Он не работал с несколькими устройствами и никогда не был предназначен для работы с XMPP. Кодовая база была беспорядочной (там был парсер HTML, чтобы справиться с мусором, который посылали некоторые клиенты OTR). Верификация была реализована неблокирующим способом. Она сообщала вам, если текущая сессия использует неизвестный отпечаток пальца, но не останавливала отправку сообщений до тех пор, пока вы не подтвердите новый отпечаток. (Как Conversations делает сейчас с BTBV после подтверждения или когда BTBV выключен). Учитывая предыдущие пункты, с моей точки зрения, не было практически никакого желания исправлять эту потенциальную проблему безопасности или чистить кодовую базу. Другой причиной удаления было то, что люди будут использовать его *случайно* даже для общения между двумя клиентами Conversations, потому что они где-то прочитали, что OTR хорош.
 
-### What clients do I use on other platforms
-There are XMPP Clients available for all major platforms.
+### Какие клиенты я использую на других платформах
+Существуют клиенты XMPP для всех основных платформ.
 #### Windows / Linux
-For your desktop computer we recommend that you use [Gajim](https://gajim.org). You need to install the plugins `OMEMO`, `HTTP Upload` and `URL image preview` to get the best compatibility with Conversations. Plugins can be installed from within the app.
+Для вашего настольного компьютера мы рекомендуем использовать [Gajim](https://gajim.org). Вам необходимо установить плагины `OMEMO`, `HTTP Upload` и `URL image preview` для наилучшей совместимости с Conversations. Плагины можно установить из приложения.
 #### iOS
-Unfortunately we don‘t have a recommendation for iPhones right now. There are three clients available [Siskin](https://siskin.im/), [ChatSecure](https://chatsecure.org/) and [Monal](https://monal.im/). Each with their own pros and cons.
+К сожалению, сейчас у нас нет рекомендаций для iPhone. Существует три клиента [Siskin](https://siskin.im/), [ChatSecure](https://chatsecure.org/) и [Monal](https://monal.im/). Каждый из них имеет свои плюсы и минусы.
 
 
-### Development
+### Разработка
 
 <a name="beta"></a>
-#### Beta testing
-If you bought the App on [Google Play](https://play.google.com/store/apps/details?id=eu.siacs.conversations)
-you can get access to the the latest beta version by signing up using [this link](https://play.google.com/apps/testing/eu.siacs.conversations).
+#### Бета-тестирование
+Если вы купили приложение на [Google Play](https://play.google.com/store/apps/details?id=eu.siacs.conversations)
+вы можете получить доступ к последней бета-версии, зарегистрировавшись по [этой ссылке](https://play.google.com/apps/testing/eu.siacs.conversations).
 
-#### How do I build Conversations
+#### Как создать Разговоры
 
-**Note:** Starting with version 2.8.0 you will need to compile libwebrtc.
-[Instructions](https://webrtc.github.io/webrtc-org/native-code/android/) can be found on the WebRTC
-website. Place the resulting libwebrtc.aar in the `libs/` directory. The PlayStore release currently
-uses the stable M90 release and renamed the file name to `libwebrtc-m90.aar` put potentially you can
-reference any file name by modifying `build.gradle`.
+**Примечание:** Начиная с версии 2.8.0 вам потребуется скомпилировать libwebrtc.
+[Инструкции](https://webrtc.github.io/webrtc-org/native-code/android/) можно найти на сайте WebRTC
+сайте. Поместите полученный libwebrtc.aar в каталог `libs/`. Релиз PlayStore в настоящее время
+использует стабильный релиз M90 и переименовал имя файла в `libwebrtc-m90.aar`, но потенциально вы можете ссылаться на любое имя файла, изменив `libwebrtc-m90.aar`.
+ссылаться на любое имя файла, изменив `build.gradle`.
 
-Make sure to have ANDROID_HOME point to your Android SDK. Use the Android SDK Manager to install missing dependencies.
+Убедитесь, что ANDROID_HOME указывает на ваш Android SDK. Используйте Android SDK Manager для установки недостающих зависимостей.
 
     git clone https://github.com/inputmice/Conversations.git
     cd Conversations
     ./gradlew assembleConversationsFreeSystemDebug
 
-There are two build flavors available. *free* and *playstore*. Unless you know what you are doing you only need *free*.
+Доступны два варианта сборки. *free* и *playstore*. Если вы не знаете, что делаете, вам нужен только *free*.
 
 
-[![Build Status](https://travis-ci.org/inputmice/Conversations.svg?branch=development)](https://travis-ci.org/inputmice/Conversations)
+[![Статус сборки](https://travis-ci.org/inputmice/Conversations.svg?branch=development)](https://travis-ci.org/inputmice/Conversations)
 
-#### How do I debug Conversations
+#### Как отлаживать Беседы
 
-If something goes wrong Conversations usually exposes very little information in
-the UI (other than the fact that something didn't work). However with adb
-(android debug bridge) you can squeeze some more information out of Conversations.
-These information are especially useful if you are experiencing trouble with
-your connection or with file transfer.
+Если что-то идет не так, Conversations обычно выдает очень мало информации в
+пользовательском интерфейсе (кроме того факта, что что-то не работает). Однако с помощью adb
+(мост отладки android) вы можете извлечь больше информации из Разговоров.
+Эта информация особенно полезна, если у вас возникли проблемы с
+с подключением или с передачей файлов.
 
-To use adb you have to connect your mobile phone to your computer with an USB cable
-and install `adb`. Most Linux systems have prebuilt packages for that tool. On
-Debian/Ubuntu for example it is called `android-tools-adb`.
+Для использования adb необходимо подключить мобильный телефон к компьютеру с помощью USB-кабеля
+и установить `adb`. Большинство систем Linux имеют готовые пакеты для этого инструмента. На
+Debian/Ubuntu, например, он называется `android-tools-adb`.
 
-Furthermore you might have to enable 'USB debugging' in the Developer options of your
-phone. After that you can just execute the following on your computer:
+Кроме того, вам, возможно, придется включить "Отладку USB" в опциях разработчика вашего
+телефона. После этого вы можете просто выполнить следующие действия на компьютере:
 
     adb -d logcat -v time -s conversations
 
-If need be there are also some Apps on the PlayStore that can be used to show the logcat
-directly on your rooted phone. (Search for logcat). However in regards to further processing
-(for example to create an issue here on Github) it is more convenient to just use your PC.
+При необходимости в PlayStore также есть несколько приложений, которые можно использовать для отображения logcat
+прямо на вашем телефоне с рутом. (Поиск logcat). Однако для дальнейшей обработки
+(например, для создания проблемы здесь на Github) удобнее просто использовать ПК.
 
-#### I found a bug
+#### Я нашел ошибку.
 
-Please report it to our [issue tracker][issues]. If your app crashes please
-provide a stack trace. If you are experiencing misbehavior please provide
-detailed steps to reproduce. Always mention whether you are running the latest
-Play Store version or the current HEAD. If you are having problems connecting to
-your XMPP server your file transfer doesn’t work as expected please always
-include a logcat debug output with your issue (see above).
+Пожалуйста, сообщите об этом в наш [issue tracker][issues]. Если ваше приложение падает, пожалуйста
+предоставьте трассировку стека. Если вы столкнулись с неправильным поведением, пожалуйста, предоставьте
+подробные шаги для воспроизведения. Всегда указывайте, используете ли вы последнюю
+Play Store или текущую версию HEAD. Если у вас возникли проблемы с подключением к
+XMPP-сервером или передача файлов не работает, как ожидалось, пожалуйста, всегда
+приложите отладочный вывод logcat к вашей проблеме (см. выше).
 
 [issues]: https://github.com/inputmice/Conversations/issues
