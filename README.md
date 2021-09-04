@@ -55,15 +55,13 @@ XEP's. Собеседник поддерживает несколько из н�
 * [XEP-0363: HTTP File Upload](http://xmpp.org/extensions/xep-0363.html) позволяет обмениваться файлами в конференциях 
   и с автономными контактами.
 
-### XMPP Features
-
-Conversations works with every XMPP server out there. However XMPP is an
-extensible protocol. These extensions are standardized as well in so called
-XEP's. Conversations supports a couple of these to make the overall user
-experience better. There is a chance that your current XMPP server does not
-support these extensions; therefore to get the most out of Conversations you
-should consider either switching to an XMPP server that does or — even better —
-run your own XMPP server for you and your friends. These XEP's are:
+Разговоры работают с каждым сервером XMPP там. Однако XMPP является
+расширяемый протокол. Эти расширения стандартизированы также в так называемом
+XEP. Conversations поддерживает пару из них, чтобы сделать общий пользователь
+опыт лучше. Есть шанс, что ваш текущий сервер XMPP не
+поддержать эти расширения; поэтому, чтобы получить максимальную отдачу от разговоров вы
+следует учитывать либо переход на сервер XMPP, который делает или — еще лучше —
+запустите собственный сервер XMPP для вас и ваших друзей. Эти XEP:
 
 * [XEP-0065: SOCKS5 Bytestreams](http://xmpp.org/extensions/xep-0065.html) (or mod_proxy65). Will be used to transfer
   files if both parties are behind a firewall (NAT).
@@ -91,9 +89,9 @@ run your own XMPP server for you and your friends. These XEP's are:
 
 #### How do I install Conversations?
 
-Conversations is entirely open source and licensed under GPLv3. So if you are a
-software developer you can check out the sources from GitHub and use Gradle to
-build your apk file.
+Разговоры полностью открытый источник и лицензированы под GPLv3. Так что если вы
+разработчик программного обеспечения вы можете проверить источники от GitHub и использовать Gradle to
+построить ваш файл apk.
 
 The more convenient way — which not only gives you automatic updates but also
 supports the further development of Conversations — is to buy the App in the

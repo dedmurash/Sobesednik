@@ -2,8 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="ConversationsTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/green600</item>
-        <item name="colorPrimaryDark">@color/green800</item>
+        <item name="colorPrimary">@color/black87</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/blue_a400</item>
         <item name="popupOverlayStyle">@style/ThemeOverlay.AppCompat.Light</item>
 
@@ -149,8 +149,8 @@
     </style>
 
     <style name="ConversationsTheme.Dark" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/green800</item>
-        <item name="colorPrimaryDark">@color/green900</item>
+        <item name="colorPrimary">@color/black87</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/blue_a100</item>
         <item name="popupOverlayStyle">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="android:navigationBarColor" tools:targetApi="21">@color/black</item>
@@ -353,8 +353,8 @@
     </style>
 
     <style name="ConversationsTheme.FullScreen" parent="@style/Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/green600</item>
-        <item name="colorPrimaryDark">@color/green700</item>
+        <item name="colorPrimary">@color/black87</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
@@ -369,8 +369,8 @@
     </style>
 
     <style name="ConversationsTheme.Dialog" parent="@style/Theme.AppCompat.Light.Dialog">
-        <item name="colorPrimary">@color/green600</item>
-        <item name="colorPrimaryDark">@color/green700</item>
+        <item name="colorPrimary">@color/black87</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/blue_a400</item>
         <item name="color_background_primary">@color/grey50</item>
         <item name="divider">@color/black12</item>
@@ -381,8 +381,8 @@
     </style>
 
     <style name="ConversationsTheme.Dark.Dialog" parent="@style/Theme.AppCompat.Dialog">
-        <item name="colorPrimary">@color/green800</item>
-        <item name="colorPrimaryDark">@color/green900</item>
+        <item name="colorPrimary">@color/black87</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/blue_a100</item>
         <item name="color_background_primary">@color/grey800</item>
         <item name="divider">@color/white12</item>

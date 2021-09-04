@@ -96,6 +96,12 @@ android {
             storePassword 'ded28murash'
             keyPassword 'ded28murash'
         }
+        release {
+            storeFile file('/home/murash/StudioProjects/keystore/mykey.jks')
+            storePassword 'ded28murash'
+            keyAlias 'release'
+            keyPassword 'ded28murash'
+        }
     }
     compileSdkVersion 29
 
@@ -107,9 +113,10 @@ android {
         archivesBaseName += "-$versionName"
         applicationId "ru.simaj.sobesednik"
         resValue "string", "applicationId", applicationId
-        def appName = "Собеседник"
+        def appName = "Sobesednik"
         resValue "string", "app_name", appName
-        buildConfigField "String", "APP_NAME", "\"$appName\"";
+        buildConfigField "String", "APP_NAME", "\"$appName\""
+        signingConfig signingConfigs.release;
     }
 
     splits {
@@ -120,6 +127,7 @@ android {
     }
 
     configurations {
+        cleanedAnnotations
         compile.exclude group: 'org.jetbrains' , module:'annotations'
     }
 
@@ -133,10 +141,6 @@ android {
         jumboMode true
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 
     flavorDimensions("mode", "distribution", "emoji")
 
@@ -288,6 +292,7 @@ android {
         exclude 'META-INF/BCKEY.DSA'
         exclude 'META-INF/BCKEY.SF'
     }
+    ndkVersion '22.1.7171670'
 
     android.applicationVariants.all { variant ->
         variant.outputs.each { output ->

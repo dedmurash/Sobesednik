@@ -611,7 +611,7 @@ public class ConversationsActivity extends XmppActivity implements OnConversatio
                     return;
                 }
             }
-            actionBar.setTitle(R.string.app_name);
+            actionBar.setTitle(R.string.application_name);
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
     }
