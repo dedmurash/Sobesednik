@@ -115,6 +115,9 @@ android {
         resValue "string", "applicationId", applicationId
         def appName = "Sobesednik"
         resValue "string", "app_name", appName
+        def appruName = "Собеседник"
+        resValue "string", "app_ru_name", appruName
+        buildConfigField "String", "APP_RU_NAME", "\"$appruName\""
         buildConfigField "String", "APP_NAME", "\"$appName\""
         signingConfig signingConfigs.release;
     }

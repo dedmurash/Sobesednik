@@ -1581,7 +1581,7 @@ public class ConversationFragment extends XmppFragment implements EditMessage.Ke
                 } else {
                     res = R.string.no_storage_permission;
                 }
-                Toast.makeText(getActivity(), getString(res, getString(R.string.app_name)), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(res, getString(R.string.app_ru_name)), Toast.LENGTH_SHORT).show();
             }
         }
         if (writeGranted(grantResults, permissions)) {

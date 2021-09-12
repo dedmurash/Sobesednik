@@ -58,7 +58,7 @@
         android:appCategory="social"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/new_launcher"
-        android:label="@string/application_name"
+        android:label="@string/app_ru_name"
         android:largeHeap="true"
         android:networkSecurityConfig="@xml/network_security_configuration"
         android:requestLegacyExternalStorage="true"
@@ -104,7 +104,7 @@
         </activity>
         <activity
             android:name=".ui.ConversationsActivity"
-            android:label="@string/application_name"
+            android:label="@string/app_ru_name"
             android:launchMode="singleTask"
             android:minWidth="300dp"
             android:minHeight="300dp"
@@ -116,7 +116,7 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".ui.UriHandlerActivity"
-            android:label="@string/application_name">
+            android:label="@string/app_ru_name">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -205,7 +205,7 @@
             android:label="@string/group_chat_avatar" />
         <activity
             android:name=".ui.ShareWithActivity"
-            android:label="@string/application_name"
+            android:label="@string/app_ru_name"
             android:launchMode="singleTop">
 
             <intent-filter>

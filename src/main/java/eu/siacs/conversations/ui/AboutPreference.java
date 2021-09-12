@@ -21,8 +21,8 @@ public class AboutPreference extends Preference {
 	}
 
 	private void setSummaryAndTitle(final Context context) {
-	    setSummary(String.format("%s %s", BuildConfig.APP_NAME, BuildConfig.VERSION_NAME));
-        setTitle(context.getString(R.string.title_activity_about_x, BuildConfig.APP_NAME));
+	    setSummary(String.format("%s %s", BuildConfig.APP_RU_NAME, BuildConfig.VERSION_NAME));
+        setTitle(context.getString(R.string.title_activity_about_x, BuildConfig.APP_RU_NAME));
     }
 
     @Override

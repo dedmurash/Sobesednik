@@ -223,7 +223,7 @@
     <string name="fetching_keys">Fetching keys…</string>
     <string name="done">Done</string>
     <string name="decrypt">Decrypt</string>
-    <string name="bookmarks">Bookmarks</string>
+    <string name="bookmarks">Groups</string>
     <string name="search">Search</string>
     <string name="enter_contact">Enter Contact</string>
     <string name="delete_contact">Delete contact</string>
@@ -967,5 +967,4 @@
     <string name="unable_to_enable_video">Unable to enable video.</string>
     <string name="plain_text_document">Plain text document</string>
     <string name="app_server">App server</string>
-    <string name="application_name">Sobesednik</string>
 </resources>

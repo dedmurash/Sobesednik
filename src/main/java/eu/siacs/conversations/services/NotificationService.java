@@ -150,7 +150,7 @@ public class NotificationService {
         final NotificationChannel foregroundServiceChannel = new NotificationChannel("foreground",
                 c.getString(R.string.foreground_service_channel_name),
                 NotificationManager.IMPORTANCE_MIN);
-        foregroundServiceChannel.setDescription(c.getString(R.string.foreground_service_channel_description, c.getString(R.string.app_name)));
+        foregroundServiceChannel.setDescription(c.getString(R.string.foreground_service_channel_description, c.getString(R.string.app_ru_name)));
         foregroundServiceChannel.setShowBadge(false);
         foregroundServiceChannel.setGroup("status");
         notificationManager.createNotificationChannel(foregroundServiceChannel);
@@ -1152,7 +1152,7 @@ public class NotificationService {
 
     Notification createForegroundNotification() {
         final Notification.Builder mBuilder = new Notification.Builder(mXmppConnectionService);
-        mBuilder.setContentTitle(mXmppConnectionService.getString(R.string.app_name));
+        mBuilder.setContentTitle(mXmppConnectionService.getString(R.string.app_ru_name));
         final List<Account> accounts = mXmppConnectionService.getAccounts();
         int enabled = 0;
         int connected = 0;

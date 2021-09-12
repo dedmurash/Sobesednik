@@ -10,7 +10,7 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.WelcomeActivity"
-            android:label="@string/application_name"
+            android:label="@string/app_ru_name"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.PickServerActivity"

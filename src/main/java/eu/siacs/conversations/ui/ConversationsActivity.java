@@ -224,7 +224,7 @@ public class ConversationsActivity extends XmppActivity implements OnConversatio
                 && getPreferences().getBoolean(getBatteryOptimizationPreferenceKey(), true)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.battery_optimizations_enabled);
-            builder.setMessage(getString(R.string.battery_optimizations_enabled_dialog, getString(R.string.app_name)));
+            builder.setMessage(getString(R.string.battery_optimizations_enabled_dialog, getString(R.string.app_ru_name)));
             builder.setPositiveButton(R.string.next, (dialog, which) -> {
                 Intent intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
                 Uri uri = Uri.parse("package:" + getPackageName());
@@ -611,7 +611,7 @@ public class ConversationsActivity extends XmppActivity implements OnConversatio
                     return;
                 }
             }
-            actionBar.setTitle(R.string.application_name);
+            actionBar.setTitle(R.string.app_ru_name);
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
     }
